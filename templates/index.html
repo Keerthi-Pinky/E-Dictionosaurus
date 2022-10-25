@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{title}}{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+<img id="titleimg" src="{{url_for('static', filename = 'title.png')}}" width="300" height="30">
+<div id="my_camera" onclick="take_snap()"></div>
+<script src="{{ url_for('static', filename = 'script.js') }}"></script>
+<div class="row text-center">
+  <p class="text-info" id="infop">Click on the Cam Display to take a Pic</p>
+  <button class="btn btn-primary" id="retakeButton" onclick="retake()">Retake</button>
+  <button class="btn btn-primary" id="processButton" onclick="process()">Process The Pic</button>
+</div>
+<div id="resultsholder"></div>
+
+
+{% endblock %}

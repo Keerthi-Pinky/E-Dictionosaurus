@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{  url_for('static', filename = 'style.css')  }}">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!--<script src="{{ url_for('static', filename = 'script.js') }}"></script>-->
+    <script type="text/javascript" src="{{ url_for('static', filename = 'webcam.js') }}"></script>
+    <title>{% block title %}{% endblock %} - EDictionosaurus</title>
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <a class="navbar-brand" href="#">E-Dictionosaurus</a>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/">Home</a></li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+    <div id="content" class="container main-container">
+    {% block content %}{% endblock %}</div>
+    <div id="footer" class="container text-center">
+      {% block footer %}
+      &copy; Copyright E-Dictionosaurus 2021.
+      {% endblock %}
+    </div>
+    <footer>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </footer>
+  </body>
+</html>
